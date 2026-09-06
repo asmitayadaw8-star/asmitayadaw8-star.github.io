@@ -15,8 +15,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'ATS Matcher', href: '#ats-matcher' },
-    { name: 'Resumes', href: '#resumes' },
+    { name: 'Job Matcher', href: '#job-matcher' },
+    { name: 'Resume', href: '#resume' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
 
             {/* Quick Resume CTA */}
             <a
-              href="#resumes"
+              href="#resume"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-sky-600 hover:bg-sky-700 text-white shadow-sm transition-all hover:shadow"
             >
               <FileText size={14} />
@@ -120,12 +120,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
           ))}
           <div className="pt-2">
             <a
-              href="#resumes"
+              href="#resume"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-sky-600 text-white"
             >
               <FileText size={16} />
-              <span>View & Download Resumes</span>
+              <span>View & Download Resume</span>
             </a>
           </div>
         </div>

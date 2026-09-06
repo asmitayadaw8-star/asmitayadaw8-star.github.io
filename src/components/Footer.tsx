@@ -32,8 +32,8 @@ export const Footer: React.FC = () => {
             <a href="#skills" className="hover:text-white transition-colors">Skills</a>
             <a href="#experience" className="hover:text-white transition-colors">Experience</a>
             <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#ats-matcher" className="hover:text-white transition-colors">ATS Matcher</a>
-            <a href="#resumes" className="hover:text-white transition-colors">Resumes</a>
+            <a href="#job-matcher" className="hover:text-white transition-colors">Job Matcher</a>
+            <a href="#resume" className="hover:text-white transition-colors">Resume</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
             <a href="https://github.com/asmitayadaw8-star" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>

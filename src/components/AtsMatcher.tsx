@@ -116,13 +116,13 @@ export const AtsMatcher: React.FC = () => {
       let calculatedScore = Math.min(96, Math.max(68, 65 + baseMatched * 3.5 - missing.length * 5));
       if (strong.length === 0) calculatedScore = 45;
 
-      let rec = "Use the Master ATS Resume or the role-specific edition matching this job title.";
+      let rec = "Review Asmita's verified resume above for relevant experience in customer communication, collections, and inside sales.";
       if (lower.includes("collection") || lower.includes("debt") || lower.includes("recovery")) {
-        rec = "Recommended Resume: Asmita_Yadav_Debt_Collection_Resume.pdf. Emphasize the Bajrang Business Solutions tenure, PTP milestone tracking, and ledger reconciliation.";
+        rec = "Recommended Focus: Emphasize the Bajrang Business Solutions debt recovery tenure, PTP milestone tracking, and ledger reconciliation.";
       } else if (lower.includes("sales") || lower.includes("inside sales") || lower.includes("property")) {
-        rec = "Recommended Resume: Asmita_Yadav_Inside_Sales_Resume.pdf. Highlight BANT lead qualification, consultative discovery, and site-visit conversions.";
+        rec = "Recommended Focus: Highlight consultative lead qualification, client relationship management, and high outbound call discipline.";
       } else {
-        rec = "Recommended Resume: Asmita_Yadav_Customer_Support_Resume.pdf. Highlight First Contact Resolution (FCR), empathetic de-escalation, and CRM ticket hygiene.";
+        rec = "Recommended Focus: Highlight customer resolution, empathetic client communication, conflict de-escalation, and CRM hygiene.";
       }
 
       const tip = "During the interview, anchor your answers in your daily call volume (70–90 calls/day), your academic analytical foundation (88% merit), and concrete examples of handling difficult callers calmly.";
@@ -145,7 +145,7 @@ export const AtsMatcher: React.FC = () => {
   };
 
   return (
-    <section id="ats-matcher" className="py-20 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+    <section id="job-matcher" className="py-20 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -154,10 +154,10 @@ export const AtsMatcher: React.FC = () => {
             Interactive Recruiter Tool
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            ATS Job Description Keyword Matcher
+            Job Description Keyword Matcher
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
-            Paste your Job Description below to evaluate ATS keyword compatibility against Asmita's verified profile in real time.
+            Paste your Job Description below to evaluate keyword compatibility against Asmita's verified profile in real time.
           </p>
         </div>
 
@@ -211,12 +211,12 @@ export const AtsMatcher: React.FC = () => {
                 {isAnalyzing ? (
                   <>
                     <RefreshCw size={16} className="animate-spin" />
-                    <span>Calculating ATS Score...</span>
+                    <span>Calculating Match Score...</span>
                   </>
                 ) : (
                   <>
                     <Sparkles size={16} />
-                    <span>Analyze ATS Match</span>
+                    <span>Analyze Job Fit</span>
                   </>
                 )}
               </button>
@@ -232,7 +232,7 @@ export const AtsMatcher: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
                 <div>
                   <div className="text-xs uppercase tracking-wider font-bold text-indigo-600 dark:text-indigo-400">
-                    Calculated ATS Match Score
+                    Calculated Job Match Score
                   </div>
                   <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">
                     {result.score >= 80 ? 'Exceptional Fit' : result.score >= 65 ? 'Strong Compatible Candidate' : 'Moderate Match'}

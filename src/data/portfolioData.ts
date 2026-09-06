@@ -48,7 +48,7 @@ export const candidateData = {
   location: "Noida / Greater Noida, Uttar Pradesh, India",
   email: "asmitayadaw8@gmail.com",
   phone: "+91 9517650366",
-  linkedin: "https://linkedin.com/in/asmita-yadav",
+  linkedin: "https://www.linkedin.com/in/asmita-yadaw-a309443aa/",
   github: "https://github.com/asmitayadaw8-star",
   stats: [
     { label: "Frontline Calling Experience", value: "9+ Mos" },

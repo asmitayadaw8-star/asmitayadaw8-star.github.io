@@ -70,9 +70,9 @@ export const Skills: React.FC = () => {
           ))}
         </div>
 
-        {/* ATS Keywords Footnote */}
+        {/* Skills Footnote */}
         <div className="mt-12 p-4 rounded-xl bg-sky-50/60 dark:bg-slate-800/40 border border-sky-100 dark:border-slate-700 text-center text-xs text-slate-600 dark:text-slate-400">
-          ✨ <strong>ATS Recruiter Note:</strong> All skills listed above are directly verified through verified employment at Bajrang Business Solutions and Fincrif India, as well as formal UP Board educational records.
+          ✨ <strong>Recruiter Note:</strong> All skills listed above are directly verified through verified employment at Bajrang Business Solutions and Fincrif India, as well as formal UP Board educational records.
         </div>
 
       </div>

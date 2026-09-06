@@ -1,6 +1,7 @@
-# Asmita Yadav — Professional Portfolio & ATS Resumes
+# Asmita Yadav — Professional Portfolio & Official Resume
 
 > **Live Public URL:** [https://asmitayadaw8-star.github.io/](https://asmitayadaw8-star.github.io/)  
+> **LinkedIn:** [https://www.linkedin.com/in/asmita-yadaw-a309443aa/](https://www.linkedin.com/in/asmita-yadaw-a309443aa/)  
 > **GitHub Profile:** [https://github.com/asmitayadaw8-star](https://github.com/asmitayadaw8-star)  
 > **Candidate:** Asmita Yadav — Customer Support Executive & Inside Sales Specialist  
 
@@ -8,7 +9,7 @@
 
 ## 🌟 Overview
 
-This repository powers the official professional portfolio and ATS-optimized resume showcase for **Asmita Yadav**. Built with modern frontend engineering principles (React 18, TypeScript, Vite, Tailwind CSS), it provides recruiters with a recruiter-friendly experience, interactive case studies, a live ATS Job Description Matcher, and 1-click ATS resume downloads.
+This repository powers the official professional portfolio and verified resume showcase for **Asmita Yadav**. Built with modern frontend engineering principles (React 18, TypeScript, Vite, Tailwind CSS), it provides recruiters with a recruiter-friendly experience, interactive case studies, a live Job Description Matcher, and direct official resume download.
 
 ---
 
@@ -53,8 +54,8 @@ git push -u origin main
 - **Skills Matrix:** Categorized competencies across Voice Operations, Debt Recovery, Inside Sales, CX, Tools & Languages.
 - **Experience Timeline:** Detailed work records for Ambr Homes, Bajrang Business Solutions, and Fincrif India with quantified achievement metrics.
 - **Project Case Studies:** Filterable grid with interactive modal detailing 3 verified field case studies and 6 proposed operational architectures.
-- **Interactive ATS JD Matcher:** In-browser utility where recruiters can paste any Job Description to calculate real-time match %, view matched keywords vs. gaps, and get custom interview tips.
-- **Resume Center:** 1-click preview and print-to-PDF downloads for 4 role-specific resumes and plain text format.
+- **Interactive JD Matcher:** In-browser utility where recruiters can paste any Job Description to calculate real-time match %, view matched keywords vs. gaps, and get custom interview tips.
+- **Resume Center:** 1-click preview and PDF download for Asmita's latest verified resume.
 - **Education & Credentials:** Verified UPMSP 12th Science Distinction and 10th 88% Merit.
 - **Direct Recruiter Contact:** Contact inquiry form, direct phone/email, and instant WhatsApp chat link.
 - **Dark / Light Theme:** Seamless toggle with local storage persistence.

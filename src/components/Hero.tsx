@@ -63,11 +63,11 @@ export const Hero: React.FC = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <a
-                href="#resumes"
+                href="#resume"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
                 <FileText size={18} />
-                <span>View ATS Resumes</span>
+                <span>View Latest Resume</span>
               </a>
               <a
                 href="#projects"
@@ -77,11 +77,11 @@ export const Hero: React.FC = () => {
                 <span>Explore Case Studies</span>
               </a>
               <a
-                href="#ats-matcher"
+                href="#job-matcher"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 font-semibold text-sm border border-indigo-200 dark:border-indigo-800/60 transition-all"
               >
                 <Sparkles size={16} />
-                <span>Test ATS JD Matcher</span>
+                <span>Check Job Fit</span>
               </a>
             </div>
 
