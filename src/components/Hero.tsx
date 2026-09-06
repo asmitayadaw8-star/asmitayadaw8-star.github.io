@@ -1,157 +1,165 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Download, Briefcase, Mail, ShieldCheck, CheckCircle2, ChevronDown 
+} from 'lucide-react';
 import { candidateData } from '../data/portfolioData';
-import { Phone, Mail, MapPin, CheckCircle, FileText, Briefcase, Sparkles, ShieldCheck } from 'lucide-react';
-import { GithubIcon } from './GithubIcon';
 
 export const Hero: React.FC = () => {
+  const [imageError, setImageError] = useState(false);
+  const resumeUrl = "./resumes/Asmita_Yadav_Resume.pdf";
+
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 border-b border-slate-200 dark:border-slate-800">
-      {/* Background subtle ambient blur */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-sky-100/40 via-indigo-50/20 to-transparent dark:from-sky-950/20 dark:via-slate-900/10 dark:to-transparent pointer-events-none -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="overview" className="min-h-screen flex items-center justify-center pt-28 pb-16 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Text & CTAs */}
-          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-            
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Available for Immediate Opportunities in Noida / Delhi NCR & Remote</span>
-            </div>
+          {/* Left Hero Details */}
+          <div className="lg:col-span-7 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Job Seeker Status Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-950/70 border border-sky-700/60 text-sky-400 text-xs font-mono font-semibold mb-6 backdrop-blur-md shadow-lg shadow-sky-950/40">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>OPEN TO WORK • CUSTOMER SUPPORT & INSIDE SALES SPECIALIST</span>
+              </div>
 
-            {/* Main Headline */}
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-                Empathetic Voice. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-indigo-600 to-sky-500">
-                  Measurable Results.
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Driving Consultative <br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400">
+                  Client Relationships
                 </span>
+                <br />& High-Impact Voice Operations
               </h1>
-              <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl font-normal leading-relaxed">
-                I am <strong className="text-slate-900 dark:text-white font-bold">{candidateData.name}</strong>, a Customer Support Executive and Inside Sales Specialist with 9+ months of frontline voice experience resolving customer challenges, negotiating debt recovery, and qualifying sales pipelines across Noida business centers.
+
+              {/* Value Proposition */}
+              <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                Performance-driven <strong className="text-white font-semibold">Customer Support Executive</strong> and <strong className="text-sky-400 font-semibold">Inside Sales Specialist</strong> currently serving as <strong className="text-white font-semibold">Sales Executive</strong> at <strong className="text-sky-400 font-semibold">Ambr Homes Private Limited</strong>. Demonstrated excellence across high-volume telecalling (<strong className="text-white">70–90 calls/day</strong>), <strong className="text-emerald-400">95%+ Promise-to-Pay</strong> recovery agreements at Bajrang Business Solutions, and consultative financial qualification at Fincrif India. Backed by <strong className="text-purple-400 font-semibold">88.33% academic merit</strong> in UPMSP Board examinations.
               </p>
-            </div>
 
-            {/* Quick Contact Line */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-slate-600 dark:text-slate-400 font-medium">
-              <div className="flex items-center gap-1.5">
-                <MapPin size={16} className="text-sky-600 dark:text-sky-400" />
-                <span>{candidateData.location}</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Mail size={16} className="text-sky-600 dark:text-sky-400" />
-                <a href={`mailto:${candidateData.email}`} className="hover:text-sky-600 dark:hover:text-sky-400 underline decoration-slate-300 underline-offset-4">
-                  {candidateData.email}
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
+                <a
+                  href="#experience"
+                  className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-semibold text-sm transition-all shadow-[0_0_25px_rgba(56,189,248,0.35)] hover:shadow-[0_0_40px_rgba(56,189,248,0.6)] hover:-translate-y-1"
+                >
+                  <Briefcase className="w-4 h-4" />
+                  <span>Explore Career Journey</span>
+                </a>
+                
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Asmita_Yadav_Resume.pdf"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-sky-500/50 font-semibold text-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/50"
+                >
+                  <Download className="w-4 h-4 text-sky-400" />
+                  <span>Download Official Resume</span>
+                </a>
+
+                <a
+                  href="#contact"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-transparent hover:bg-slate-900/60 text-slate-400 hover:text-white border border-transparent hover:border-slate-800 text-sm font-medium transition-all hover:-translate-y-0.5"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Let's Connect</span>
                 </a>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Phone size={16} className="text-sky-600 dark:text-sky-400" />
-                <a href={`tel:${candidateData.phone}`} className="hover:text-sky-600 dark:hover:text-sky-400">
-                  {candidateData.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <GithubIcon size={16} className="text-slate-700 dark:text-slate-300" />
-                <a href={candidateData.github} target="_blank" rel="noopener noreferrer" className="hover:text-sky-600 dark:hover:text-sky-400">
-                  GitHub Profile
-                </a>
-              </div>
-            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              <a
-                href="#resume"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
-              >
-                <FileText size={18} />
-                <span>View Latest Resume</span>
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold text-sm border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow transition-all"
-              >
-                <Briefcase size={18} />
-                <span>Explore Case Studies</span>
-              </a>
-              <a
-                href="#job-matcher"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 font-semibold text-sm border border-indigo-200 dark:border-indigo-800/60 transition-all"
-              >
-                <Sparkles size={16} />
-                <span>Check Job Fit</span>
-              </a>
-            </div>
-
-            {/* Verified Guarantee Pill */}
-            <div className="pt-2 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-500 dark:text-slate-400">
-              <ShieldCheck size={16} className="text-emerald-600 dark:text-emerald-400" />
-              <span>100% Truthful Data — Verified against Experience Letters, Offer Letters & UPMSP Records</span>
-            </div>
+              {/* Data Integrity Statement */}
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400 font-mono">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>100% Truthful Data — Verified against Experience Letters & Official UPMSP Marks</span>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right Column: Portrait & Stats */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative group">
+          {/* Right Column: Candidate Portrait with Cyber Halos */}
+          <div className="lg:col-span-5 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+              className="relative w-72 sm:w-80 lg:w-96"
+            >
+              {/* Radial Glow Halo */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-sky-600/30 via-cyan-500/20 to-indigo-600/30 rounded-3xl blur-2xl opacity-75 animate-pulse" />
               
-              {/* Outer decorative ring */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-3xl blur-md opacity-25 group-hover:opacity-40 transition-opacity" />
-              
-              {/* Card container */}
-              <div className="relative bg-white dark:bg-slate-900 p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl max-w-sm">
-                <div className="relative aspect-square overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
+              {/* Portrait Container */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-slate-700/80 bg-slate-900 shadow-2xl group">
+                {!imageError ? (
                   <img
                     src="./assets/candidate_portrait.png"
-                    alt="Asmita Yadav — Customer Support Executive"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    alt={candidateData.name}
+                    onError={() => setImageError(true)}
+                    className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  
-                  {/* Floating Experience Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm flex items-center justify-between">
-                    <div>
-                      <div className="text-[11px] uppercase tracking-wider font-bold text-sky-600 dark:text-sky-400">Active Role</div>
-                      <div className="text-xs font-bold text-slate-900 dark:text-white">Sales Executive @ Ambr Homes</div>
+                ) : (
+                  <div className="w-full h-96 flex flex-col items-center justify-center bg-slate-800 text-slate-400 p-6 text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-sky-600/20 border border-sky-500/40 flex items-center justify-center text-sky-400 font-bold text-2xl mb-3">
+                      AY
                     </div>
-                    <CheckCircle size={18} className="text-emerald-500" />
+                    <span className="font-bold text-white text-lg">{candidateData.name}</span>
+                    <span className="text-xs text-slate-400 mt-1">{candidateData.title}</span>
                   </div>
-                </div>
+                )}
 
-                {/* Micro Stats Grid */}
-                <div className="grid grid-cols-2 gap-2 mt-3 text-center">
-                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-                    <div className="text-lg font-extrabold text-slate-900 dark:text-white">70–90+</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Daily Outbound Calls</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-transparent opacity-80" />
+
+                {/* Candidate Name Badge Overlay */}
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-800 flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-bold text-white flex items-center gap-1.5">
+                      <span>{candidateData.name}</span>
+                      <CheckCircle2 className="w-4 h-4 text-sky-400" />
+                    </div>
+                    <div className="text-[11px] text-sky-400 font-mono">Current: Sales Executive @ Ambr Homes</div>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-                    <div className="text-lg font-extrabold text-slate-900 dark:text-white">88.33%</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">10th Academic Merit</div>
+                  <div className="px-2 py-1 rounded-lg bg-emerald-950/80 border border-emerald-700/60 text-emerald-400 text-[10px] font-mono font-bold">
+                    ACTIVE
                   </div>
                 </div>
               </div>
-            </div>
+
+              {/* Floating Pill 1: 70-90 Calls/Day */}
+              <motion.div 
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="absolute -top-4 -left-4 bg-[#0d121d]/95 backdrop-blur-md border border-sky-500/40 px-3.5 py-2 rounded-2xl shadow-xl flex items-center gap-2.5 hover:scale-105 hover:border-sky-400 transition-all cursor-default"
+              >
+                <div className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-ping" />
+                <div>
+                  <div className="text-[11px] font-bold text-white">70–90 Calls/Day</div>
+                  <div className="text-[9px] text-slate-400 font-mono">High-Volume Capacity</div>
+                </div>
+              </motion.div>
+
+              {/* Floating Pill 2: 95%+ PTP Fulfillment */}
+              <motion.div 
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-4 -right-4 bg-[#0d121d]/95 backdrop-blur-md border border-emerald-500/40 px-3.5 py-2 rounded-2xl shadow-xl flex items-center gap-2.5 hover:scale-105 hover:border-emerald-400 transition-all cursor-default"
+              >
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                <div>
+                  <div className="text-[11px] font-bold text-white">95%+ PTP Fulfillment</div>
+                  <div className="text-[9px] text-slate-400 font-mono">Settlement Recovery</div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
 
         </div>
+      </div>
 
-        {/* Global Stats Ribbon */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-          {candidateData.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-sky-300 dark:hover:border-sky-800 transition-colors"
-            >
-              <div className="text-3xl font-extrabold text-sky-600 dark:text-sky-400 tracking-tight">
-                {stat.value}
-              </div>
-              <div className="mt-1 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-slate-500 text-xs font-mono">
+        <span>Scroll to Explore</span>
+        <ChevronDown className="w-4 h-4 animate-bounce text-sky-400" />
       </div>
     </section>
   );
